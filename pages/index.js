@@ -27,18 +27,18 @@ export default function Home({ posts }) {
           const postImageUrl =
             postImage?.type === 'file' ? postImage.file.url : postImage?.external.url
           return (
-            <div key={post.id} className="mb-8 sm:flex">
+            <div key={post.id} className="sm:flex lg:h-40 my-16 border border-gray-200 rounded-lg shadow-card transition-colors duration-200 ease-in-out hover:bg-slate-200">
               {postImageUrl && (
                 <Link
-                  className="mb-10 block w-full sm:mb-0 sm:mr-5 sm:w-1/3"
+                  className="block w-full sm:mb-0"
                   href={`/${post.properties.Slug.rich_text[0].plain_text}`}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img alt="" src={postImageUrl} />
+                  <img className="w-full h-full object-fill rounded-lg" alt="" src={postImageUrl} />
                 </Link>
               )}
-              <Link className="w-full" href={`/${post.properties.Slug.rich_text[0].plain_text}`}>
-                <div className="w-full">
+              <Link className="w-full p-8 px-5" href={`/${post.properties.Slug.rich_text[0].plain_text}`}>
+                <div className="w-full mx-4">
                   <h3 className="w-full text-xl font-medium text-gray-900">
                     {post.properties.Post.title[0].plain_text}
                   </h3>
