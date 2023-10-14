@@ -1,17 +1,6 @@
 {
-  "name": "notion-nextjs-blog",
-  "description": "A starter blog template powered by Next.js, Notion and Tailwind CSS",
-  "version": "0.3.0",
-  "author": {
-    "name": "Lucio Villa",
-    "email": "hi@luciovilla.com",
-    "url": "https://luciovilla.com"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/luciovilla/notion-nextjs-blog.git"
-  },
+  "name": "Keisuke-Portfolio",
+  "description": "In my tech blog, I will cover a wide range of topics from rich web visualization techniques using Three.js to machine learning.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
