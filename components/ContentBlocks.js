@@ -48,7 +48,7 @@ export const RenderBlocks = ({ blocks }) => {
         )
 
       case 'code':
-        return <Code key={id} value={value} />
+        return <Code key={id} rich_text={value.rich_text} language={value.language} />
 
       default:
         return `Unsupported block (${type === 'unsupported' ? 'unsupported by Notion API' : type})`
@@ -56,16 +56,18 @@ export const RenderBlocks = ({ blocks }) => {
   })
 }
 
-const Code = ( {value} ) => {
-  const rich_text = value.rich_text
-  const language = value.language
-  // console.log(rich_text)
-  // console.log(language)
+const Code = ( {rich_text, language} ) => {
+  console.log(rich_text[0].plain_text)
+  console.log(rich_text[0])
   return (
-    <h1>
-      {rich_text.map((v, i) => console.log(v))}
-      {language}
-    </h1>
+    <div className="bg-stone-100 p-8 w-full rounded-md">
+      <pre>
+        <code>
+          {rich_text[0].text.content}
+        </code>
+      </pre>
+    </div>
+
   )
 }
 
