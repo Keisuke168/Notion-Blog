@@ -1,3 +1,6 @@
+import { useEffect } from "react"
+import Prism from "prismjs"
+
 export const RenderBlocks = ({ blocks }) => {
   return blocks.map((block) => {
     const { type, id } = block
@@ -57,13 +60,15 @@ export const RenderBlocks = ({ blocks }) => {
 }
 
 const Code = ( {rich_text, language} ) => {
-  console.log(rich_text[0].plain_text)
-  console.log(rich_text[0])
+  useEffect(()=>{
+    Prism.highlightAll();
+  })
+  const codes = rich_text[0].text.content;
   return (
-    <div className="bg-stone-100 p-8 w-full rounded-md">
+    <div className="w-full rounded-lg">
       <pre>
-        <code>
-          {rich_text[0].text.content}
+        <code className={`language-${language}`}>
+          {codes}
         </code>
       </pre>
     </div>
