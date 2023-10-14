@@ -22,7 +22,7 @@ export default function Nav() {
         <Link href="/" className="p-1 text-gray-900 hover:underline sm:p-4">
           Home
         </Link>
-        <ExternalLink href="https://twitter.com/luciovilla">Contact</ExternalLink>
+        <ExternalLink href="https://www.linkedin.com/in/keisuke-yoshimi/">Contact</ExternalLink>
         <ExternalLink href="https://github.com/Keisuke168">
           Source Code
         </ExternalLink>
